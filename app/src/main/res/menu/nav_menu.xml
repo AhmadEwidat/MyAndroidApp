@@ -1,46 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     >
 
-    <item android:title="choices">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home"
+        android:title="Home" />
 
-        <menu>
-            <item
-                android:id="@+id/nav_logout"
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/nav_notifications"
+        android:title="Notifications" />
 
-                android:icon="@drawable/exit_to_app"
+    <item
+        android:id="@+id/nav_inService"
+        android:icon="@drawable/nav_report"
+        android:title="in service" />
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@drawable/nav_history"
+        android:title="History" />
 
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/exit_to_app"
+        android:title="Logout" />
 
-                app:showAsAction="always"
-                android:title="Logout"/>
-        </menu>
-
-    </item>
-    <group android:checkableBehavior="single">
-
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/nav_home"
-            android:title="Home" />
-
-        <item
-            android:id="@+id/nav_notifications"
-            android:icon="@drawable/nav_notifications"
-            android:title="Notification" />
-
-        <item
-            android:id="@+id/nav_report"
-            android:icon="@drawable/nav_report"
-            android:title="Report" />
-        <item
-            android:id="@+id/nav_search"
-            android:icon="@drawable/nav_search"
-            android:title="Search" />
-
-
-    </group>
 
 </menu>

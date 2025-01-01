@@ -2,123 +2,142 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#ffffff"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff">
 
     <!-- TableLayout for TextView and EditText -->
 
+
+    <!-- First Row: UserName -->
+
+    <!-- Second Row: Phone Number -->
+
+    <!-- Third Row: Location -->
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="412dp"
-        android:layout_height="208dp"
+        android:layout_width="401dp"
+        android:layout_height="242dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/carageimage"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="4dp" />
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/carageimage" />
 
-    <TableLayout
-        android:layout_width="411dp"
-        android:layout_height="282dp"
-        android:layout_below="@id/imageView"
-        android:padding="16dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="212dp">
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableRow3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-        <!-- First Row: UserName -->
-        <TableRow
-            android:layout_marginBottom="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtMainName"
+            android:layout_width="167dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="UserName"
+            android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/txtMainName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:gravity="start"
-                android:text="UserName"
-                android:textSize="25sp" />
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="282dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter your name"
+            android:inputType="text" />
+    </TableRow>
 
-            <EditText
-                android:id="@+id/editTextText"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Enter your name"
-                android:inputType="text" />
-        </TableRow>
 
-        <!-- Second Row: Phone Number -->
-        <TableRow
-            android:layout_marginBottom="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
 
-            <TextView
-                android:id="@+id/txtPhoneMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:gravity="start"
-                android:text="Phone Number"
-                android:textSize="25sp" />
-
-            <EditText
-                android:id="@+id/editTextText2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Enter your phone number"
-                android:inputType="phone" />
-        </TableRow>
-
-        <!-- Third Row: Location -->
-        <TableRow
-            android:layout_marginBottom="20dp"
+        <TextView
+            android:id="@+id/txtPhoneMain"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="44dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="Phone Number"
+            android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:gravity="start"
-                android:text="Location"
-                android:textSize="25sp" />
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="229dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter your phone number"
+            android:inputType="phone" />
+    </TableRow>
 
-            <EditText
-                android:id="@+id/editTextText3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Enter your location"
-                android:inputType="text" />
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/listView"
+        app:layout_constraintStart_toStartOf="@+id/tableRow2"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow">
 
-    </TableLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="169dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="start"
+            android:text="Location"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Enter your location"
+            android:inputType="text" />
+    </TableRow>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAddCar"
         style="@style/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
         android:text="Add"
-        tools:layout_editor_absoluteX="114dp"
-        tools:layout_editor_absoluteY="649dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listView" />
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="91dp"
-        android:layout_below="@id/button"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="525dp" />
+        android:layout_width="421dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/btnAddCar"
+        android:layout_marginBottom="23dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddCar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

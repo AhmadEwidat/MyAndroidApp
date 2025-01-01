@@ -1,5 +1,4 @@
 package com.example.myproject;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,16 +18,17 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class ClientMain extends AppCompatActivity {
+public class GarageProfile extends AppCompatActivity {
     private DrawerLayout drawerLayout;
-Button btnAddCar;
-    NavigationView navigationView;
+    private NavigationView navigationView;
+    private Button btnGaragePf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_client_main);
-        btnAddCar=findViewById(R.id.btnAddCar);
-        drawerLayout = findViewById(R.id.drawerlayout);
+        setContentView(R.layout.activity_garage_profile);
+        btnGaragePf=findViewById(R.id.btnGaragePf);
+
+        drawerLayout = findViewById(R.id.Garagedrawer_layout);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,53 +45,47 @@ Button btnAddCar;
         // Link toggle with DrawerLayout
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
-
-        // Apply window insets for edge-to-edge display
-        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        btnAddCar.setOnClickListener(e->{
-            Intent intent=new Intent(ClientMain.this,carAdd.class);
-            startActivity(intent);
-        });
         navigationView = findViewById(R.id.nav_view);
+        // Apply window insets for edge-to-edge display
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.nav_search) {
-                    Toast.makeText(ClientMain.this, "Home selected", Toast.LENGTH_SHORT).show();
-                    Intent intentHome = new Intent(ClientMain.this, SearchGarage.class);
-                    startActivity(intentHome);
+                if (item.getItemId() == R.id.nav_home) {
+
 
                 } else if (item.getItemId() == R.id.nav_notifications) {
-                    Toast.makeText(ClientMain.this, "Notifications selected", Toast.LENGTH_SHORT).show();
-                    Intent intentNotifications = new Intent(ClientMain.this, ClientNotification.class);
+                    Toast.makeText(GarageProfile.this, "Notifications selected", Toast.LENGTH_SHORT).show();
+                    Intent intentNotifications = new Intent(GarageProfile.this, GarageNotificationActivity.class);
                     startActivity(intentNotifications);
 
-                } else if (item.getItemId() == R.id.nav_report) {
-                    Toast.makeText(ClientMain.this, "Report selected", Toast.LENGTH_SHORT).show();
-                    Intent intentReport = new Intent(ClientMain.this, ClientReport.class);
+                } else if (item.getItemId() == R.id.nav_inService) {
+                    Toast.makeText(GarageProfile.this, "Report selected", Toast.LENGTH_SHORT).show();
+                    Intent intentReport = new Intent(GarageProfile.this, inService.class);
                     startActivity(intentReport);
 
-
-                } else if (item.getItemId() == R.id.nav_logout) {
-                    Toast.makeText(ClientMain.this, "Logout selected", Toast.LENGTH_SHORT).show();
-                    Intent intentLogout = new Intent(ClientMain.this, MainActivity.class);
+                }else if (item.getItemId() == R.id.nav_logout) {
+                    Toast.makeText(GarageProfile.this, "Logout selected", Toast.LENGTH_SHORT).show();
+                    Intent intentLogout = new Intent(GarageProfile.this, MainActivity.class);
                     startActivity(intentLogout);
 
-                } else {
+                } else if (item.getItemId() == R.id.nav_history) {
+                    Toast.makeText(GarageProfile.this, "History selected", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(GarageProfile.this, History.class);
+                    startActivity(intent);
+
+                }
+                else {
                     return false;
                 }
-
 
                 drawerLayout.closeDrawers();
                 return true;
             }
         });
+        btnGaragePf.setOnClickListener(e->{
+            Intent intent=new Intent(GarageProfile.this,AddServicePage.class);
+            startActivity(intent);
+        });
+
     }
-
-
-
 }

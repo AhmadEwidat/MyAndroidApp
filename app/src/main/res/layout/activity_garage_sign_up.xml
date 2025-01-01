@@ -142,14 +142,13 @@
 
             <Button
                 android:id="@+id/btnSignUp"
+                style="@style/MyButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginLeft="50dp"
                 android:layout_gravity="right"
-                style="@style/MyButtonStyle"
+                android:layout_marginLeft="30dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="60dp"
-                android:text="Sign Up"
-              />
+                android:text="Sign Up" />
         </TableRow>
     </TableLayout>

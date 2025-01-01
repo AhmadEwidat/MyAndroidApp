@@ -35,7 +35,7 @@ public class LogIn extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-              });
+        });
         sharedPreference=getSharedPreferences(SHARED_PREFERENCE_NAME,MODE_PRIVATE);
         SharedPreferences.Editor editor=sharedPreference.edit();
         editTextPassword=findViewById(R.id.editTextPassword);
@@ -57,22 +57,22 @@ public class LogIn extends AppCompatActivity {
                 editor.apply();
             }
             if(radCust.isChecked()) {
-                Intent intent = new Intent(LogIn.this, signUp.class);
+                Intent intent = new Intent(LogIn.this, ClientMain.class);
                 startActivity(intent);
             } else if (radGarage.isChecked()) {
-                Intent intent = new Intent(LogIn.this, GarageSignUp.class);
+                Intent intent = new Intent(LogIn.this, GarageProfile.class);
                 startActivity(intent);
             }
         });
         btnSignin=findViewById( R.id.btnSignin);
         btnSignin.setOnClickListener(e->{
             if(radCust.isChecked()) {
-                Intent intent = new Intent(LogIn.this, SearchGarage.class);
+                Intent intent = new Intent(LogIn.this, signUp.class);
                 startActivity(intent);
             }else if (radGarage.isChecked()) {
                 Intent intent = new Intent(LogIn.this, GarageSignUp.class);
                 startActivity(intent);
             }
-       });
+        });
     }
 }

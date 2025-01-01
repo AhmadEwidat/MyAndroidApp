@@ -2,15 +2,30 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <item
-        android:id="@+id/action_settings"
-        android:title="ll"
-        app:showAsAction="always">
-      <menu>
-          <item
-              android:title="kdks"
-              />
-      </menu>
 
-    </item>
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/nav_home"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/nav_notifications"
+        android:icon="@drawable/nav_notifications"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/nav_report"
+        android:icon="@drawable/nav_report"
+        android:title="Report" />
+
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/nav_search"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/exit_to_app"
+        android:title="Logout" />
+
 </menu>
