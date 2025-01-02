@@ -19,7 +19,6 @@ public class signUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_up);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.signcust), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -32,6 +31,8 @@ public class signUp extends AppCompatActivity {
 
         });
     }
+
+
     private DatePickerDialog createDialogWithoutDateField() {
         DatePickerDialog dpd = new DatePickerDialog(this, null, 2019, 1, 1);
         try {

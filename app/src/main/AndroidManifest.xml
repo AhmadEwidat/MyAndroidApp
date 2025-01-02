@@ -20,6 +20,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".NavBaseGarage"
+            android:exported="false" />
+        <activity
+            android:name=".NavBaseActivity"
+            android:exported="false" />
+        <activity
             android:name=".ClientNotification"
             android:exported="false" />
         <activity
@@ -70,8 +76,6 @@
         <activity
             android:name=".carAdd"
             android:exported="false" />
-
-
         <activity
             android:name=".MainActivity"
             android:exported="true"

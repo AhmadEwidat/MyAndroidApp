@@ -6,26 +6,40 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/nav_home"
-        android:title="Home" />
+        android:title="Home"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        />
 
     <item
         android:id="@+id/nav_notifications"
         android:icon="@drawable/nav_notifications"
-        android:title="Notifications" />
+        android:title="Notifications"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        />
 
     <item
         android:id="@+id/nav_inService"
         android:icon="@drawable/nav_report"
-        android:title="in service" />
+        android:title="in service"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"/>
     <item
         android:id="@+id/nav_history"
         android:icon="@drawable/nav_history"
-        android:title="History" />
+        android:title="History"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        />
 
     <item
         android:id="@+id/nav_logout"
         android:icon="@drawable/exit_to_app"
-        android:title="Logout" />
+        android:title="Logout"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        />
 
 
 </menu>

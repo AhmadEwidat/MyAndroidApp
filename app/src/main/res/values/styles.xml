@@ -31,6 +31,7 @@
         <item name="colorPrimary">#2196F3</item>
         <item name="colorPrimaryDark">#FF3700B3</item>
         <item name="colorAccent">#FF03DAC5</item>
+
     </style>
 
     <!--designs login_bkogin and register-->
@@ -43,6 +44,12 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/loginBkColor</item>
         <item name="android:focusableInTouchMode">true</item>
+    </style>
+    <style name="buttonStyle" parent="parent">
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorPrimaryDark">#FF3700B3</item>
+        <item name="colorAccent">#FF03DAC5</item>
+        <item name="backgroundTint">#FF3700B3</item>
     </style>
 
     <style name="headerText" parent="parent">
