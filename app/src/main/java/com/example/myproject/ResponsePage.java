@@ -15,13 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
 
-public class ResponsePage extends AppCompatActivity {
+public class ResponsePage extends NavBaseGarage {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_response_page);
+        getLayoutInflater().inflate(R.layout.activity_response_page, findViewById(R.id.fragmentGarage));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.response), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

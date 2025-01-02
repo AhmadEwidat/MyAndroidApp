@@ -14,14 +14,14 @@ import com.example.myproject.reycycler.HistoryPaidRecyclerAdapter;
 import com.example.myproject.reycycler.HistoryWaitingForPaymentRecycletAdapter;
 
 
-public class History extends AppCompatActivity {
+public class History extends  NavBaseGarage{
     RecyclerView historyPaidRecycler;
     RecyclerView historyWaitingRecycler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_history);
+        getLayoutInflater().inflate(R.layout.activity_history, findViewById(R.id.fragmentGarage));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

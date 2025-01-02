@@ -18,7 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myproject.R;
 
-public class ClientGarageActivity extends AppCompatActivity {
+public class ClientGarageActivity extends NavBaseActivity {
 
     // Expanded list of services
     String[] services = {
@@ -43,7 +43,7 @@ public class ClientGarageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_client_garage);
+        getLayoutInflater().inflate(R.layout.activity_client_garage, findViewById(R.id.fragment));
 
         // Spinner for Cars
         Spinner carSpinner = findViewById(R.id.carSpinner);

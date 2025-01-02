@@ -9,13 +9,13 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class ClientNotification extends AppCompatActivity {
+public class ClientNotification extends NavBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_client_notification);
+        getLayoutInflater().inflate(R.layout.activity_client_notification, findViewById(R.id.fragment));
         ListView notificationListView = findViewById(R.id.lstNotficationClient);
     }
 }

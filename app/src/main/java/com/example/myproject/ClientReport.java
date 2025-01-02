@@ -6,12 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-public class ClientReport extends AppCompatActivity {
+public class ClientReport extends NavBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_client_report);
+        getLayoutInflater().inflate(R.layout.activity_client_report, findViewById(R.id.fragment));
 
         RecyclerView recycler = findViewById(R.id.rcycReprot);
 

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,85 +10,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="162dp"
-            android:background="?attr/colorPrimary"
-            android:title="Search Garage"
-            android:titleTextColor="#ffffff"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerViewGarageSearch"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="0dp"
+        android:layout_height="671dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableLayout
-            android:id="@+id/tableLayout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewGarageSearch"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        <TableRow>
 
-            <TableRow>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/search_input_layout"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/search_input_layout"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:layout_below="@id/toolbar"
-                    android:layout_margin="16dp"
-                    android:layout_marginTop="8dp"
-                    app:startIconDrawable="@drawable/searicon"
-                    app:startIconTint="@color/black">
+                android:layout_margin="16dp"
+                android:layout_marginTop="8dp"
+                app:startIconDrawable="@drawable/searicon"
+                app:startIconTint="@color/black">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/search_edit_text"
-                        android:layout_width="240dp"
-                        android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:padding="12dp"
-                        android:textSize="16sp" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/search_edit_text"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textSize="16sp" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+            </com.google.android.material.textfield.TextInputLayout>
 
-                <Button
-                    android:id="@+id/btnSearch"
-                    style="@style/MyButtonStyle"
-                    android:layout_width="90dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center"
-                    android:text="search"
-                    android:textStyle="bold"></Button>
+            <Button
+                android:id="@+id/btnSearch"
+                style="@style/MyButtonStyle"
+                android:layout_width="90dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:text="search"
+                android:textStyle="bold"></Button>
 
-            </TableRow>
-        </TableLayout>
+        </TableRow>
+    </TableLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewGarageSearch"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewGarageSearch"
+        android:layout_width="0dp"
+        android:layout_height="509dp"
+        android:layout_marginBottom="62dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.recyclerview.widget.RecyclerView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:menu="@menu/nav_menu" />
 
-</androidx.drawerlayout.widget.DrawerLayout>

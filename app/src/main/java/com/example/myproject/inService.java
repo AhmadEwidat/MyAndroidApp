@@ -13,13 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.myproject.reycycler.InServiceRecyclerAdapter;
 
 
-public class inService extends AppCompatActivity {
+public class inService extends NavBaseGarage {
     RecyclerView inServiceView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_in_service);
+        getLayoutInflater().inflate(R.layout.activity_in_service, findViewById(R.id.fragmentGarage));
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
