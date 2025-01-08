@@ -18,6 +18,8 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class GarageProfile extends NavBaseGarage {
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -27,11 +29,10 @@ public class GarageProfile extends NavBaseGarage {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_garage_profile, findViewById(R.id.fragmentGarage));
         btnGaragePf=findViewById(R.id.btnGaragePf);
-
-
-
+        ArrayList arr = getIntent().getStringArrayListExtra("arr");
         btnGaragePf.setOnClickListener(e->{
             Intent intent=new Intent(GarageProfile.this,AddServicePage.class);
+            intent.putExtra("arr",arr);
             startActivity(intent);
         });
 

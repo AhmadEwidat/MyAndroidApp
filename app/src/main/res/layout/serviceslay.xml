@@ -58,13 +58,14 @@
         >
 
         <EditText
-            android:id="@+id/edtPrice"
+            android:id="@+id/edtDescription"
             style="@style/modifiedEditText"
-            android:hint=" Price"
+            android:hint=" Description"
             android:inputType="phone"
             android:maxLines="1"
 
-            />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF" />
     </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputTime"
@@ -75,17 +76,17 @@
          android:layout_width="match_parent"
          android:layout_height="40dp">
 
-    <EditText
-        android:id="@+id/edtDay"
-        style="@style/modifiedEditText"
-        android:layout_width="130dp"
-        android:textColorHint="#ffffff"
-        android:hint="Day"
-        android:inputType="number"
-        android:maxLines="1" />
+         <EditText
+             android:id="@+id/edtPrice"
+             style="@style/modifiedEditText"
+             android:layout_width="130dp"
+             android:hint="Price"
+             android:inputType="number"
+             android:maxLines="1"
+             android:textColorHint="#ffffff" />
 
     <EditText
-        android:id="@+id/edtDay2"
+        android:id="@+id/edtDay"
         style="@style/modifiedEditText"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
