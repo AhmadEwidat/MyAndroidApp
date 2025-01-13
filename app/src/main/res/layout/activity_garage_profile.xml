@@ -1,112 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Garagedrawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextText7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="139dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="@+id/txtServiceGarage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtVNumGarage"
-        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgGarageProfile"
+        android:layout_width="match_parent"
+        android:layout_height="257dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/carageimage"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="-2dp" />
 
     <TextView
-        android:id="@+id/txtViewGargaePf"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="29dp"
-        android:text="Name"
+        android:id="@+id/txtNameGarage"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="UserName"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txtVNumGarage"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayoutGarage" />
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="271dp" />
 
     <TextView
-        android:id="@+id/txtVNumGarage"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="100dp"
-        android:text="Number"
+        android:id="@+id/txtPhoneGarage"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+
+        android:text="Phone Number"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/txtServiceGarage"
-        app:layout_constraintEnd_toStartOf="@+id/editTextText7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewGargaePf" />
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="125dp"
+        tools:layout_editor_absoluteY="343dp" />
 
-    <!-- TableLayout with TableRow -->
-
-    <EditText
-        android:id="@+id/editTextText8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="38dp"
-        android:layout_marginBottom="5dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/editTextText7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtViewGargaePf"
-        app:layout_constraintTop_toTopOf="@+id/txtViewGargaePf" />
 
     <TextView
-        android:id="@+id/txtServiceGarage"
-        android:layout_width="91dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="61dp"
-        android:text="Service"
-        app:layout_constraintBottom_toTopOf="@+id/lstvGaragePf"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtVNumGarage" />
-
-    <TableLayout
-        android:id="@+id/tableLayoutGarage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="95dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtViewGargaePf"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-    </TableLayout>
+        android:id="@+id/txtLocGarage"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="Location"
+        android:textSize="25sp"
+        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteY="404dp" />
 
     <Button
-        android:id="@+id/btnGaragePf"
+        android:id="@+id/btnAddService"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="19dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lstvGaragePf" />
+        android:layout_centerHorizontal="true"
 
-    <ListView
-        android:id="@+id/lstvGaragePf"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="49dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnGaragePf"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtServiceGarage" />
+        android:layout_gravity="center|left"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="#FF3700B3"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="624dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecService"
+        android:layout_width="415dp"
+        android:layout_height="300dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_below="@id/btnAddService"
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="467dp" />
 
+</LinearLayout>

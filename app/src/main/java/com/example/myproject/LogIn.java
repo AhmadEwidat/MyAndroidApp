@@ -2,6 +2,7 @@ package com.example.myproject;
 
 import static androidx.fragment.app.FragmentManager.TAG;
 
+import android.accounts.Account;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -32,6 +33,10 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import Mokup.accountt;
+import Mokup.clientss;
+import Mokup.garagee;
+
 public class LogIn extends AppCompatActivity {
     EditText editTextUsername;
     EditText editTextPassword;
@@ -44,6 +49,7 @@ public class LogIn extends AppCompatActivity {
     public static final String SHARED_PREFERENCE_NAME = "sharedPreference";
     public static final String USER_NAME_KEY = "userName";
     public static final String PASSWORD_KEY = "password";
+    public static accountt account;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,11 +97,12 @@ public class LogIn extends AppCompatActivity {
                 editor.putString(PASSWORD_KEY, enteredPassword);
                 editor.apply();
             }
-            ArrayList<String> arr=new ArrayList<>();
+
             if (radCust.isChecked()) {
                 String url = "http://10.0.2.2/Php/LogInClient.php";
                 JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                         new Response.Listener<JSONArray>() {
+                            @SuppressLint("RestrictedApi")
                             @Override
                             public void onResponse(JSONArray response) {
                                 boolean isAuthenticated = false;
@@ -105,29 +112,32 @@ public class LogIn extends AppCompatActivity {
                                     try {
                                         JSONObject user = response.getJSONObject(i);
                                         if(user.getString("UserName").equals(editTextUsername.getText().toString().trim())&&user.getString("Password").equals(editTextPassword.getText().toString().trim())){
-                                            String username = user.getString("UserName");
-                                        arr.add(username);
-                                        String password = user.getString("Password");
-                                        arr.add(password);
-                                        String location = user.getString("location");
-                                        arr.add(location);
-                                        String Phone = user.getString("Phone");
-                                        arr.add(Phone);
-                                        String FullName = user.getString("FullName");
-                                        arr.add(FullName);
+                                            String Username = user.getString("UserName");
+                                            Log.d(TAG , Username);
+                                            String password = user.getString("Password");
+                                            Log.d(TAG , password);
+                                            String location = user.getString("location");
+                                            Log.d(TAG , location);
+                                            String Phone = user.getString("Phone");
+                                            Log.d(TAG , Phone);
+                                            String FullName = user.getString("FullName");
+                                            Log.d(TAG , FullName);
 
-
+                                            account=new clientss(Username,password,location,Integer.valueOf(Phone),FullName);
+                                            Log.d(TAG, "onResponse:ds ");
+//                                                JSONObject carObject = user.getJSONObject("car");
+//                                                Cars car=new Cars(carObject.getString("Id"),carObject.getString("image"),carObject.getString("Model"));
+//                                            ( (clientss)account).getArrayList().add(car);
                                             isAuthenticated = true;
                                             break;
 
-                                    } } catch (JSONException exception) {
+                                        } } catch (JSONException exception) {
                                         Log.d("volley error", exception.toString());
                                     }
                                 }
 
                                 if (isAuthenticated) {
                                     Intent intent = new Intent(LogIn.this, ClientMain.class);
-                                    intent.putExtra("arr",arr);
                                     startActivity(intent);
                                 } else {
                                     Toast.makeText(LogIn.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
@@ -156,26 +166,23 @@ public class LogIn extends AppCompatActivity {
                                     try {
                                         JSONObject user = response.getJSONObject(i);
                                         if(user.getString("UserName").equals(editTextUsername.getText().toString().trim())&&user.getString("Password").equals(editTextPassword.getText().toString().trim())){
-                                        String username = user.getString("UserName");
-                                        Log.d(TAG , username);
-                                        arr.add(username);
-                                        String password = user.getString("Password");
-                                        Log.d(TAG , password);
-                                        arr.add(password);
-                                        String location = user.getString("location");
-                                        Log.d(TAG , location);
-                                        arr.add(location);
-                                        String Phone = user.getString("Phone");
-                                        Log.d(TAG , Phone);
-                                        arr.add(Phone);
-                                        String NameOfGarage = user.getString("NameOfGarage");
-                                        Log.d(TAG , NameOfGarage);
-                                        arr.add(NameOfGarage);
+                                            String username = user.getString("UserName");
+                                            Log.d(TAG , username);
+                                            String password = user.getString("Password");
+                                            Log.d(TAG , password);
+                                            String location = user.getString("location");
+                                            Log.d(TAG , location);
+                                            String Phone = user.getString("Phone");
+                                            Log.d(TAG , Phone);
 
+                                            String NameOfGarage = user.getString("NameOfGarage");
+                                            Log.d(TAG , NameOfGarage);
+                                            account=new garagee(username,password,location,Integer.valueOf(Phone),NameOfGarage);
                                             isAuthenticated = true;
                                             break;
 
-                                    } }catch (JSONException exception) {
+                                        }
+                                    }catch (JSONException exception) {
                                         Log.d("volley error", exception.toString());
                                     }
                                 }
@@ -183,7 +190,7 @@ public class LogIn extends AppCompatActivity {
                                 if (isAuthenticated) {
                                     Intent intent = new Intent(LogIn.this, GarageProfile.class);
                                     startActivity(intent);
-                                    intent.putExtra("arr",arr);
+
 
                                 } else {
                                     Toast.makeText(LogIn.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();

@@ -1,62 +1,96 @@
 package com.example.myproject;
 
-import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.widget.Toolbar;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.myproject.CaptionedImagesAdapter;
+//import com.example.myproject.cars;
+import com.example.myproject.R;
 
-import com.google.android.material.navigation.NavigationView;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.List;
+
+import Mokup.accountt;
+import Mokup.cars;
+import Mokup.clientss;
+import Mokup.garagee;
 
 public class ClientMain extends NavBaseActivity {
+    private List<cars> items = new ArrayList<>();
+    private RecyclerView RecCars;
+    private static final String BASE_URL = "http://10.0.2.2/Php/getCars.php";
+    private TextView txtMainName,txtPhoneMain,txtLoc;
 
-    Button btnAddCar;
-    TextView txtMainName,txtPhoneMain,txtloc;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getLayoutInflater().inflate(R.layout.activity_client_main, findViewById(R.id.fragment));
-        btnAddCar = findViewById(R.id.btnAddCar);
-        ViewCompat.setOnApplyWindowInsetsListener(drawerLayout, (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        ArrayList <String>arrayList= getIntent().getStringArrayListExtra("arr");
+        RecCars = findViewById(R.id.RecCars);
         txtMainName=findViewById(R.id.txtMainName);
         txtPhoneMain=findViewById(R.id.txtPhoneMain);
-        txtloc=findViewById(R.id.txtLoc);
-        txtMainName.setText(arrayList.get(0));
-        txtPhoneMain.setText(arrayList.get(3));
-        txtloc.setText(arrayList.get(2));
+        txtLoc=findViewById(R.id.txtLoc);
 
-        btnAddCar.setOnClickListener(e -> {
-            Intent intent = new Intent(ClientMain.this, carAdd.class);
-            startActivity(intent);
-        });
+
+        txtMainName.setText(((accountt)LogIn.account).getUserName());
+        txtPhoneMain.setText(String.valueOf (((accountt)LogIn.account).getPhone()));
+        txtLoc.setText(((accountt)LogIn.account).getLocation());
 
 
 
-
-
+        RecCars.setLayoutManager(new LinearLayoutManager(this));
+        loadItems();
     }
 
+    private void loadItems() {
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, BASE_URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONArray array = new JSONArray(response);
+                            if (array.length() > 0) {
+                                for (int i = 0; i < array.length(); i++) {
+                                    JSONObject object = array.getJSONObject(i);
+                                    String id = object.getString("Id");
+                                    String name = object.getString("Model");
+                                    String image = object.getString("Image");
 
+                                    cars car = new cars(id, image,name,LogIn.account);
+                                    items.add(car);
+                                }
 
+                                CaptionedImagesAdapter adapter = new CaptionedImagesAdapter(ClientMain.this, items);
+                                RecCars.setAdapter(adapter);
+
+                            } else {
+                                Toast.makeText(ClientMain.this, "No cars found", Toast.LENGTH_LONG).show();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(ClientMain.this, "Error parsing response", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+                Toast.makeText(ClientMain.this, "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+        Volley.newRequestQueue(ClientMain.this).add(stringRequest);
+    }
 }

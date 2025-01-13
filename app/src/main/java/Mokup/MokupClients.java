@@ -9,10 +9,10 @@ public class MokupClients {
     public MokupClients () {
 
         client = new ArrayList<>();
-        client.add(new clientss("MoathMouadi","momo123","dsds",05505,"fedf",2323));
-        client.add(new clientss("AhmadEwaidat","ahah123","dsds",05505,"fedf",2323));
-        client.add(new clientss("Diaa","didi123","dsds",05505,"fedf",2323));
-        client.add(new clientss("Osama","didi123","dsds",05505,"fedf",2323));
+        client.add(new clientss("MoathMouadi","momo123","dsds",05505,"fedf"));
+        client.add(new clientss("AhmadEwaidat","ahah123","dsds",05505,"fedf"));
+        client.add(new clientss("Diaa","didi123","dsds",05505,"fedf"));
+        client.add(new clientss("Osama","didi123","dsds",05505,"fedf"));
 
     }
     public boolean validateClient(String username, String password) {

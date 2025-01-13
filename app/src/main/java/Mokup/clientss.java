@@ -1,18 +1,32 @@
 package Mokup;
 
+
+
+import java.util.ArrayList;
+
 public class clientss extends  accountt{
 
     private  String FullName ;
-    private  int IdNum ;
+   private  ArrayList <cars>arrayList ;
+
+    public ArrayList<cars> getArrayList() {
+        return arrayList;
+    }
+
+    public void setArrayList(ArrayList<cars> arrayList) {
+        this.arrayList = arrayList;
+    }
 
     public clientss() {
         super();
     }
 
-    public clientss(String UserName, String password, String location, int phone, String fullName, int idNum) {
+    public clientss(String UserName, String password, String location, int phone, String fullName) {
         super(UserName, password, location, phone);
         FullName = fullName;
-        IdNum = idNum;
+        arrayList=new ArrayList<cars>();
+
+
 
 
     }
@@ -25,19 +39,12 @@ public class clientss extends  accountt{
         FullName = fullName;
     }
 
-    public int getIdNum() {
-        return IdNum;
-    }
-
-    public void setIdNum(int idNum) {
-        IdNum = idNum;
-    }
 
     @Override
     public String toString() {
         return "clientss{" +
                 "FullName='" + FullName + '\'' +
-                ", IdNum=" + IdNum +
+                ", IdNum=" +
                 '}';
     }
 

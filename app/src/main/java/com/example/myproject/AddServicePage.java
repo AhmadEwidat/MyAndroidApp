@@ -1,6 +1,9 @@
 package com.example.myproject;
 
 
+import static androidx.fragment.app.FragmentManager.TAG;
+
+import android.annotation.SuppressLint;
 import android.app.Service;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +23,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myproject.NavBaseGarage;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,21 +50,21 @@ public class AddServicePage extends NavBaseGarage {
         edtDescription = findViewById(R.id.edtDescription);
         edtPrice = findViewById(R.id.edtPrice);
         edtDay = findViewById(R.id.edtDay);
-        //ArrayList arr=getIntent().getStringArrayListExtra("arr");
-     /*  String garagee_UserName=arr.get(0).toString();
-        btnAdd.setOnClickListener(e->{
+        String garagee_UserName = getIntent().getStringExtra("garagee_UserName");
+        btnAdd.setOnClickListener(e -> {
             String UserName = textInputName.getText().toString();
             int price = Integer.parseInt(edtPrice.getText().toString());
             String Time = edtDay.getText().toString();
             String description = edtDescription.getText().toString();
 
-            AddServices(UserName,garagee_UserName,description, price, Time);
-        });*/
+            AddServices(UserName, garagee_UserName, description, price, Time);
+        });
 
     }
 
 
-    private void AddServices(String UserName,String garagee_UserName,String description, int price, String Time) {
+    @SuppressLint("RestrictedApi")
+    private void AddServices(String UserName, String garagee_UserName, String description, int price, String Time) {
         String url = "http://10.0.2.2/Php/AddService.php";
 
         RequestQueue queue = Volley.newRequestQueue(AddServicePage.this);
@@ -69,10 +73,15 @@ public class AddServicePage extends NavBaseGarage {
         JSONObject jsonParams = new JSONObject();
         try {
             jsonParams.put("garagee_UserName", garagee_UserName);
+            Log.d(TAG, "ss" + garagee_UserName);
             jsonParams.put("UserName", UserName);
+            Log.d(TAG, "ss" + UserName);
             jsonParams.put("description", description);
+            Log.d(TAG, description);
             jsonParams.put("price", price);
+            Log.d(TAG, "ss" + String.valueOf(price));
             jsonParams.put("Time", Time);
+            Log.d(TAG, "ss" + Time);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -95,7 +104,9 @@ public class AddServicePage extends NavBaseGarage {
                                 Toast.LENGTH_SHORT).show();
 
                     }
+
                 },
+
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
@@ -108,4 +119,3 @@ public class AddServicePage extends NavBaseGarage {
         queue.add(request);
     }
 }
-

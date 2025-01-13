@@ -9,14 +9,6 @@
     android:background="#ffffff"
     android:orientation="vertical">
 
-    <!-- TableLayout for TextView and EditText -->
-
-
-    <!-- First Row: UserName -->
-
-    <!-- Second Row: Phone Number -->
-
-    <!-- Third Row: Location -->
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,12 +18,12 @@
         app:srcCompat="@drawable/carageimage"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="-2dp" />
+
     <TextView
         android:id="@+id/txtMainName"
-        android:layout_width="167dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="UserName"
         android:textAlignment="center"
@@ -41,10 +33,10 @@
 
     <TextView
         android:id="@+id/txtPhoneMain"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:gravity="center"
 
         android:text="Phone Number"
@@ -54,42 +46,42 @@
         tools:layout_editor_absoluteY="343dp" />
 
 
-
-
     <TextView
         android:id="@+id/txtLoc"
-        android:layout_width="169dp"
+        android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
         android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Location"
         android:textSize="25sp"
         tools:layout_editor_absoluteX="123dp"
         tools:layout_editor_absoluteY="404dp" />
 
-    <ListView
-        android:id="@+id/listView"
+    <Button
+        android:id="@+id/btnAddCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_gravity="center|left"
+        android:layout_marginTop="40dp"
+        android:background="@null"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="#FF3700B3"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="115dp"
+        tools:layout_editor_absoluteY="624dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecCars"
         android:layout_width="415dp"
-        android:layout_height="132dp"
+        android:layout_height="300dp"
         android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
         android:layout_below="@id/btnAddCar"
         tools:layout_editor_absoluteX="-4dp"
         tools:layout_editor_absoluteY="467dp" />
 
-    <Button
-        android:id="@+id/btnAddCar"
-        style="@style/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:text="Add"
-        tools:layout_editor_absoluteX="115dp"
-        tools:layout_editor_absoluteY="624dp" />
 </LinearLayout>

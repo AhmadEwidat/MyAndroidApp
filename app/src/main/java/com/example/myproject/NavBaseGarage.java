@@ -59,8 +59,8 @@ public class NavBaseGarage extends AppCompatActivity {
 
         if (item.getItemId() == R.id.nav_home) {
             Toast.makeText(NavBaseGarage.this, "home selected", Toast.LENGTH_SHORT).show();
-            Intent intentNotifications = new Intent(NavBaseGarage.this, GarageProfile.class);
-            startActivity(intentNotifications);
+//            Intent intentNotifications = new Intent(NavBaseGarage.this, GarageProfile.class);
+//            startActivity(intentNotifications);
 
         } else if (item.getItemId() == R.id.nav_notifications) {
             Toast.makeText(NavBaseGarage.this, "Notifications selected", Toast.LENGTH_SHORT).show();

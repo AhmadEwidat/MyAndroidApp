@@ -10,13 +10,18 @@ public class services {
     private String Time ;
     private  int price ;
     private  String garage_UserName ;
-
     public services(int service_id, String garage_UserName, String userName) {
         this.service_id = service_id;
         this.garage_UserName = garage_UserName;
         UserName = userName;
     }
 
+    public services(int price, int service_id, String garage_UserName,String UserName) {
+        this.price = price;
+        this.service_id = service_id;
+        this.garage_UserName = garage_UserName;
+        this.UserName=UserName;
+    }
     public services(int service_id, String userName, String description, String time, int price, String garage_UserName) {
         this.service_id = service_id;
         UserName = userName;

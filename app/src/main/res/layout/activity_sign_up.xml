@@ -7,29 +7,136 @@
     android:layout_height="match_parent"
     tools:context="signUp">
 
+    <EditText
+        android:id="@+id/signUPPlateNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Plate number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SignUPManufactureSpinner" />
+
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView140"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
-        android:layout_marginTop="97dp"
-        android:layout_marginBottom="99dp"
-        android:text="Username"
+        android:layout_marginTop="40dp"
+        android:text="Plate number"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/NumberTF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/SignUPIDNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="ID number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NumberTF" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
-        android:layout_marginBottom="46dp"
-        android:text="Model"
+        android:layout_marginTop="37dp"
+        android:text="ID number"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginEnd="67dp"
+        android:text="Car manufacture"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/SignUPManufactureSpinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Sign Up"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/signUpBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="47dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="SignUp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Spinner
+        android:id="@+id/SignUPManufactureSpinner"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/SignUpImageBTN"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/purple_700"
+        android:text="..."
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/SignUPImageView" />
+
+    <EditText
+        android:id="@+id/userTF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginBottom="77dp"
+        android:text="Username"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/PasswrodTF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <TextView
         android:id="@+id/textView3"
@@ -47,124 +154,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
+        android:layout_marginTop="53dp"
         android:text="Phone number"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/NumberTF"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="62dp"
-        android:text="Car manufacture"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/SignUPManufactureSpinner"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="62dp"
-        android:layout_marginBottom="228dp"
-        android:text="Manufature year"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SIgnUPdateBtn2"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="51dp"
-        android:text="Sign Up"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/signUpBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="46dp"
-        android:layout_marginBottom="47dp"
-        android:text="SignUp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Spinner
-        android:id="@+id/SignUPManufactureSpinner"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="46dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView5"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/SignUpImageBTN"
-        android:layout_width="0dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="46dp"
-        android:layout_marginBottom="44dp"
-        android:text="..."
-        app:layout_constraintBottom_toTopOf="@+id/signUpBTN"
-        app:layout_constraintEnd_toEndOf="@+id/SIgnUPdateBtn2"
-        app:layout_constraintStart_toStartOf="@+id/SIgnUPdateBtn2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <Button
-        android:id="@+id/SIgnUPdateBtn2"
-        android:layout_width="0dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="34dp"
-        android:text="..."
-        app:layout_constraintBottom_toTopOf="@+id/SignUpImageBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
-
-    <EditText
-        android:id="@+id/userTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="17dp"
-        android:ems="10"
-        android:hint="Username"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <EditText
-        android:id="@+id/PasswrodTF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="17dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userTF" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/NumberTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="22dp"
-        android:layout_marginEnd="17dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Number"
         android:inputType="number"
@@ -172,25 +173,27 @@
         app:layout_constraintTop_toBottomOf="@+id/PasswrodTF" />
 
     <EditText
-        android:id="@+id/SignUPModeTF"
+        android:id="@+id/PasswrodTF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:layout_marginBottom="21dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="Model"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/SIgnUPdateBtn2"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userTF" />
 
     <ImageView
         android:id="@+id/SignUPImageView"
-        android:layout_width="71dp"
+        android:layout_width="0dp"
         android:layout_height="77dp"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toTopOf="@+id/signUpBTN"
+        app:layout_constraintEnd_toStartOf="@+id/SignUpImageBTN"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:srcCompat="@drawable/ic_menu_camera"
         tools:src="@android:drawable/ic_menu_gallery"
         tools:srcCompat="@drawable/ic_menu_gallery" />

@@ -18,6 +18,8 @@ public abstract class NavBaseActivity extends AppCompatActivity {
     protected DrawerLayout drawerLayout;
     protected NavigationView navigationView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +54,14 @@ public abstract class NavBaseActivity extends AppCompatActivity {
 
     protected void handleNavigation(MenuItem item) {
         int itemId = item.getItemId();
-
-        if (itemId == R.id.nav_search) {
+        if (itemId == R.id.nav_home) {
+            Intent homeIntent=new Intent(this,ClientMain.class);
+            homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             Toast.makeText(this, "Home selected", Toast.LENGTH_SHORT).show();
+            startActivity(homeIntent);
+        }
+        else if (itemId == R.id.nav_search) {
+            Toast.makeText(this, "Search selected", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, SearchGarage.class));
         } else if (itemId == R.id.nav_notifications) {
             Toast.makeText(this, "Notifications selected", Toast.LENGTH_SHORT).show();

@@ -7,11 +7,18 @@ public class accountt {
     private  String location ;
     private int Phone ;
 
+    public accountt(String UserName, int Phone,String location) {
+        this.UserName = UserName;
+        this.Phone = Phone;
+        this.location=location;
+
+    }
+
     public accountt(String UserName, String password, String location, int phone) {
-        UserName = UserName;
-        Password = password;
+        this.UserName = UserName;
+        this.Password = password;
         this.location = location;
-        Phone = phone;
+        this.Phone = phone;
     }
 
     public accountt() {

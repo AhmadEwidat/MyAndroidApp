@@ -11,5 +11,17 @@
     <string name="login_mobile_number_hint">Mobile Number</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
-
+    <string-array name="carManufactures">
+        <item>Hyundai</item>
+        <item>Kia</item>
+        <item>Ford</item>
+        <item>Opel</item>
+        <item>Honda</item>
+        <item>Mercedes</item>
+        <item>Skoda</item>
+        <item>Volkswagen</item>
+        <item>Seat</item>
+        <item>Cupra</item>
+        <item>Mitsubishi</item>
+    </string-array>
 </resources>
