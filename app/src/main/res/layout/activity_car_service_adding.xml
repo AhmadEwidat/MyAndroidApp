@@ -35,22 +35,23 @@
 
     <EditText
         android:id="@+id/editUserService"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="178dp"
+        android:layout_height="54dp"
         android:layout_marginEnd="13dp"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/txtService"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtService"
-        app:layout_constraintTop_toTopOf="@+id/txtService" />
+        app:layout_constraintTop_toTopOf="@+id/txtService"
+        app:layout_constraintVertical_bias="0.545" />
 
     <TextView
         android:id="@+id/txtPhoneService"
         android:layout_width="0dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="22dp"
         android:text="PhoneNumber"
         android:textAlignment="center"
@@ -61,15 +62,16 @@
 
     <EditText
         android:id="@+id/editPhoneService"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="178dp"
+        android:layout_height="49dp"
         android:layout_marginEnd="14dp"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="@+id/txtPhoneService"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtPhoneService"
-        app:layout_constraintTop_toTopOf="@+id/txtPhoneService" />
+        app:layout_constraintTop_toTopOf="@+id/txtPhoneService"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/txtLocationService"
@@ -85,49 +87,25 @@
 
     <EditText
         android:id="@+id/editServiceLocation"
-        android:layout_width="0dp"
-        android:layout_height="32dp"
+        android:layout_width="171dp"
+        android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="17dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/listView"
+        app:layout_constraintBottom_toTopOf="@+id/EditListView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtLocationService"
         app:layout_constraintTop_toBottomOf="@+id/editPhoneService" />
-
-    <Spinner
-        android:id="@+id/spinnerService"
-        android:layout_width="0dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="19dp"
-        android:layout_marginBottom="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnAddService"
-        app:layout_constraintEnd_toStartOf="@+id/btnStartService"
-        app:layout_constraintStart_toStartOf="@+id/listView"
-        app:layout_constraintTop_toBottomOf="@+id/listView" />
-
-    <Button
-        android:id="@+id/btnAddService"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="17dp"
-        android:text="ADD"
-        style="@style/buttonStyle"
-        app:layout_constraintEnd_toEndOf="@+id/listView"
-        app:layout_constraintTop_toBottomOf="@+id/listView" />
 
     <CheckBox
         android:id="@+id/checkBoxPayed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="80dp"
         android:text="Payed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -155,7 +133,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ListView
-        android:id="@+id/listView"
+        android:id="@+id/EditListView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="68dp"

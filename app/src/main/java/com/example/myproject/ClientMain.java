@@ -33,7 +33,7 @@ public class ClientMain extends NavBaseActivity {
     private RecyclerView RecCars;
     private static final String BASE_URL = "http://10.0.2.2/Php/getCars.php";
     private TextView txtMainName,txtPhoneMain,txtLoc;
-
+    static  ArrayList <String> mycars=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +70,7 @@ public class ClientMain extends NavBaseActivity {
                                     String image = object.getString("Image");
 
                                     cars car = new cars(id, image,name,LogIn.account);
+                                    mycars.add(car.getModel());
                                     items.add(car);
                                 }
 

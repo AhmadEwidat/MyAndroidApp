@@ -59,27 +59,37 @@ public class NavBaseGarage extends AppCompatActivity {
 
         if (item.getItemId() == R.id.nav_home) {
             Toast.makeText(NavBaseGarage.this, "home selected", Toast.LENGTH_SHORT).show();
-//            Intent intentNotifications = new Intent(NavBaseGarage.this, GarageProfile.class);
-//            startActivity(intentNotifications);
+            Intent home = new Intent(NavBaseGarage.this, GarageProfile.class);
+            home.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+            startActivity(home);
 
         } else if (item.getItemId() == R.id.nav_notifications) {
             Toast.makeText(NavBaseGarage.this, "Notifications selected", Toast.LENGTH_SHORT).show();
             Intent intentNotifications = new Intent(NavBaseGarage.this, GarageNotificationActivity.class);
+            intentNotifications.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
             startActivity(intentNotifications);
 
         } else if (item.getItemId() == R.id.nav_inService) {
             Toast.makeText(NavBaseGarage.this, "Report selected", Toast.LENGTH_SHORT).show();
             Intent intentReport = new Intent(NavBaseGarage.this, inService.class);
+            intentReport.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
             startActivity(intentReport);
 
         }else if (item.getItemId() == R.id.nav_logout) {
             Toast.makeText(NavBaseGarage.this, "Logout selected", Toast.LENGTH_SHORT).show();
             Intent intentLogout = new Intent(NavBaseGarage.this, MainActivity.class);
+            intentLogout.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
             startActivity(intentLogout);
 
         } else if (item.getItemId() == R.id.nav_history) {
             Toast.makeText(NavBaseGarage.this, "History selected", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(NavBaseGarage.this, History.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
             startActivity(intent);
 
         }

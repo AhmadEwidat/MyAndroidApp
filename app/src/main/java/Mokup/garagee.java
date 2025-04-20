@@ -13,7 +13,6 @@ public class garagee extends  accountt {
         NameOfGarage = nameOfGarage;
         Image = Image ;
     }
-
     public garagee(String UserName, String password, String location, int phone, String nameOfGarage) {
         super(UserName, password, location, phone);
         NameOfGarage = nameOfGarage;

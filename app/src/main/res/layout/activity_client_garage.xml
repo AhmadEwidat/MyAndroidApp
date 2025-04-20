@@ -12,28 +12,30 @@
         <!-- Garage Logo -->
         <ImageView
             android:id="@+id/garageLogo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/carageimage"
-            android:layout_gravity="center" />
+            android:layout_width="350dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:src="@drawable/carageimage" />
 
         <!-- Garage Name -->
         <TextView
+            android:id="@+id/NameOfGarage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
             android:text="ABC Garage"
             android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginTop="8dp" />
+            android:textStyle="bold" />
 
         <!-- Garage Phone -->
         <TextView
+            android:id="@+id/txtPhonGarage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Phone: +123 456 7890"
-            android:textSize="16sp"
-            android:layout_gravity="center" />
+            android:textSize="16sp" />
 
         <!-- Section Title for Services -->
         <TextView
@@ -45,11 +47,6 @@
             android:layout_marginTop="12dp" />
 
         <!-- Spinner for All Services -->
-        <Spinner
-            android:id="@+id/servicesSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:layout_marginBottom="8dp" />
 
         <!-- ListView for Services -->
         <ListView
@@ -78,18 +75,15 @@
         <!-- Submit Request Button -->
         <Button
             android:id="@+id/requestButton"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Submit Request"
             android:textSize="18sp"
+            android:backgroundTint="#FF3700B3"
             android:layout_marginTop="16dp" />
 
-        <Button
-            android:id="@+id/notificationButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="View Notifications"
-            android:layout_marginTop="16dp" />
+
 
     </LinearLayout>
 </ScrollView>

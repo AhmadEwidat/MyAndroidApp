@@ -61,7 +61,7 @@
             android:id="@+id/edtDescription"
             style="@style/modifiedEditText"
             android:hint=" Description"
-            android:inputType="phone"
+            android:inputType="text"
             android:maxLines="1"
 
             android:textColor="#FFFFFF"

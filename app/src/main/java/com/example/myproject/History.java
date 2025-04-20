@@ -4,10 +4,13 @@ import static androidx.fragment.app.FragmentManager.TAG;
 
 import Mokup.*;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,6 +22,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myproject.reycycler.HistoryPaidRecyclerAdapter;
 import com.example.myproject.reycycler.HistoryWaitingForPaymentRecycletAdapter;
@@ -36,6 +40,7 @@ public class History extends  NavBaseGarage{
     ArrayList<services_req> PaidList=new ArrayList<>();
     ArrayList<services_req> WaitingList=new ArrayList<>();
     HistoryPaidRecyclerAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +53,11 @@ public class History extends  NavBaseGarage{
         });
         dataFetch(LogIn.account.getUserName(),"Paid");
         dataFetch(LogIn.account.getUserName(),"Payment%20wait");
-        services services=new services(2,2,LogIn.account.getUserName(),"ali");
+        services services=new services(2,2,"description",LogIn.account.getUserName(),"ali");
         ArrayList<services>s=new ArrayList<>();
         s.add(services);
-        accountt acount=new accountt( "ali",056223232, "al_qudes");
-        cars car=new cars("121221H","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjDUE5wAlt-s9hHNVcoLCO86RXHxjFQbI83g&s","kia",acount);
+        accountt acount=new accountt( "ali",222222, "ssssssss");
+        cars car=new cars("ssssssss","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjDUE5wAlt-s9hHNVcoLCO86RXHxjFQbI83g&s","kia",acount);
         services_req servicesReq=new services_req(2,"2222","waiting","sssss",s,acount,LogIn.account.getUserName(),car);
         PaidList.add(servicesReq);
         WaitingList.add(servicesReq);
@@ -65,9 +70,8 @@ public class History extends  NavBaseGarage{
         historyWaitingRecycler.setAdapter(adapter2);
         historyWaitingRecycler.setLayoutManager(new LinearLayoutManager(this));
 
-
-
     }
+
     public void dataFetch(String garagee_UserName,String status){
         String finalStatus=status.trim().replace(" ","%20");
         garagee_UserName=garagee_UserName.trim().replace(" ","%20");
@@ -93,8 +97,8 @@ public class History extends  NavBaseGarage{
                                 ArrayList<services> services=new ArrayList<>();
                                 JSONArray servicesArray=data.getJSONArray("services");
                                 for(int j=0;j<servicesArray.length();j++){
-                                JSONObject jService = servicesArray.getJSONObject(j);
-                                    services.add(new services(jService.getInt("price"),jService.getInt("service_id"),LogIn.account.getUserName(),data.getString("accountt_UserName")));
+                                    JSONObject jService = servicesArray.getJSONObject(j);
+                                    services.add(new services(jService.getInt("price"),jService.getInt("service_id"),jService.getString("description"),LogIn.account.getUserName(),data.getString("accountt_UserName")));
                                 }
                                 services_req servicesReq=new services_req(data.getInt("service_req"),data.getString("startTime"),data.getString("status"),data.getString("endTime"),services,acount,LogIn.account.getUserName(),car);
                                 if(finalStatus.equals("Payment%20wait")){
@@ -112,7 +116,7 @@ public class History extends  NavBaseGarage{
                                 Log.d("volley error", exception.toString());
                             }
                         }
-                }},
+                    }},
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {

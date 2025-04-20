@@ -1,6 +1,7 @@
 package com.example.myproject.reycycler;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.myproject.CarServiceAdding;
 import com.example.myproject.R;
+
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -57,7 +61,17 @@ public class HistoryPaidRecyclerAdapter extends RecyclerView.Adapter<HistoryPaid
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context , CarServiceAdding.class);
+                Gson json=new Gson();
+                String jstring=json.toJson(list.get(holder.getAdapterPosition()));
+                intent.putExtra("services_req",jstring);
+                context.startActivity(intent);
+            }
+        });
         // Get the current item
         services_req currentCar = list.get(position);
         // Bind data to views

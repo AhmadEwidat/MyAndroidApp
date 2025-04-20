@@ -61,17 +61,25 @@ public abstract class NavBaseActivity extends AppCompatActivity {
             startActivity(homeIntent);
         }
         else if (itemId == R.id.nav_search) {
+            Intent searchIntent = new Intent(this,SearchGarage.class);
+            searchIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             Toast.makeText(this, "Search selected", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, SearchGarage.class));
+            startActivity(searchIntent);
         } else if (itemId == R.id.nav_notifications) {
+            Intent notifactionIntent = new Intent(this ,ClientNotification.class);
+            notifactionIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             Toast.makeText(this, "Notifications selected", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, ClientNotification.class));
+            startActivity(notifactionIntent);
         } else if (itemId == R.id.nav_report) {
+            Intent reportIteam = new Intent(this ,ClientReport.class);
+            reportIteam.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             Toast.makeText(this, "Report selected", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, ClientReport.class));
+            startActivity(reportIteam);
         } else if (itemId == R.id.nav_logout) {
+            Intent logoutIteam = new Intent(this ,LogIn.class);
+            logoutIteam.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             Toast.makeText(this, "Logout selected", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(logoutIteam);
         } else {
             Toast.makeText(this, "Unknown item selected", Toast.LENGTH_SHORT).show();
         }

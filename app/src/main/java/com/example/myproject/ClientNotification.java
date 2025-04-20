@@ -40,7 +40,7 @@ public class ClientNotification extends NavBaseActivity {
         loadNotifications();
     }
     private void loadNotifications() {
-        String url = "http://10.0.2.2/Php/NotificationClient.php";
+        String url = "http://10.0.2.2/Php/clientNotification.php";
 
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONArray>() {

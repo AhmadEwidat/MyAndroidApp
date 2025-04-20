@@ -70,6 +70,7 @@ public class SearchGarage extends NavBaseActivity {
     private List<String> services = new ArrayList<>();
     int click;
     private RequestQueue requestQueue;
+    String selectedItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -144,7 +145,7 @@ public class SearchGarage extends NavBaseActivity {
         setupSpinner();
 
         autoCompleteSearch.setOnItemClickListener((parent, view, position, id) -> {
-            String selectedItem = (String) parent.getItemAtPosition(position);
+             selectedItem = (String) parent.getItemAtPosition(position);
             Toast.makeText(SearchGarage.this, "Selected: " + selectedItem, Toast.LENGTH_SHORT).show();
         });
 
@@ -260,6 +261,7 @@ public class SearchGarage extends NavBaseActivity {
         String selectedType = searchTypeSpinner.getSelectedItem().toString();
         String query = autoCompleteSearch.getText().toString();
         Intent intent=new Intent(SearchGarage.this,ClientGarageActivity.class);
+        intent.putExtra("Garage",selectedItem);
         startActivity(intent);
 
 //        Toast.makeText(this, "Searching for " + query + " in " + selectedType, Toast.LENGTH_SHORT).show();

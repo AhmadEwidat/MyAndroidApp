@@ -15,7 +15,13 @@ public class services {
         this.garage_UserName = garage_UserName;
         UserName = userName;
     }
-
+    public services(int price, int service_id,String description, String garage_UserName,String UserName) {
+        this.price = price;
+        this.service_id = service_id;
+        this.garage_UserName = garage_UserName;
+        this.UserName=UserName;
+        this.description=description;
+    }
     public services(int price, int service_id, String garage_UserName,String UserName) {
         this.price = price;
         this.service_id = service_id;

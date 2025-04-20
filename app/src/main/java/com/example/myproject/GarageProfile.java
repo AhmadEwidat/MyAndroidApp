@@ -67,7 +67,6 @@ public class GarageProfile extends NavBaseGarage {
 
         btnAddService.setOnClickListener(e->{
             Intent intent=new Intent(GarageProfile.this,AddServicePage.class);
-            intent.putExtra("garagee_UserName",arrayList.get(1));
             startActivity(intent);
         });
         ShowServices();

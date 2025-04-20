@@ -50,7 +50,7 @@ public class AddServicePage extends NavBaseGarage {
         edtDescription = findViewById(R.id.edtDescription);
         edtPrice = findViewById(R.id.edtPrice);
         edtDay = findViewById(R.id.edtDay);
-        String garagee_UserName = getIntent().getStringExtra("garagee_UserName");
+        String garagee_UserName =LogIn.account.getUserName();
         btnAdd.setOnClickListener(e -> {
             String UserName = textInputName.getText().toString();
             int price = Integer.parseInt(edtPrice.getText().toString());

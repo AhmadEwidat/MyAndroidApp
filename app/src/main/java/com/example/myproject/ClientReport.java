@@ -36,7 +36,7 @@ public class ClientReport extends NavBaseActivity {
     private ReportAdapter reportAdapter;
     private List<Report> items = new ArrayList<>();
     //private RecyclerView RecCars;
-    private static final String BASE_URL ="http://10.0.2.2/Php/ReportClient.php";
+    private static final String BASE_URL ="http://10.0.2.2/Php/Report.php";
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +70,7 @@ public class ClientReport extends NavBaseActivity {
                                     Log.d(TAG , "onResponse: "+Image);
                                     String CarModel = object.getString("Model");
                                     Log.d(TAG , "onResponse: "+CarModel);
-                                    String CarId = object.getString("Id");
+                                    String CarId = object.getString("CarId");
                                     Log.d(TAG , "onResponse: "+CarId);
                                     String ServiceUserName = object.getString("UserName");
                                     Log.d(TAG , "onResponse: "+ServiceUserName);
